@@ -1,8 +1,21 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0c11;
+  --foreground: #eef0f5;
+
+  /* Custom theme colors for RoadmapApp */
+  --color-primary: #8177f2;
+  --color-primary-dark: #6f66dd;
+  --color-success: #33d6a6;
+  --color-warning: #f0a93b;
+  --color-danger: #f1696c;
+  --color-gray-50: #12151c;
+  --color-gray-100: #181c25;
+  --color-gray-200: #252a35;
+  --color-gray-400: #98a0b3;
+  --color-gray-600: #d9dce4;
+  --color-gray-800: #eef0f5;
 }
 
 @theme inline {
@@ -10,17 +23,17 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Custom colors */
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }

@@ -1,0 +1,76 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#37325C"/>
+      <stop offset="45%" stop-color="#1C1830"/>
+      <stop offset="100%" stop-color="#0A0912"/>
+    </linearGradient>
+
+    <linearGradient id="tubeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A79CFB"/>
+      <stop offset="55%" stop-color="#8177F2"/>
+      <stop offset="100%" stop-color="#5347C4"/>
+    </linearGradient>
+
+    <radialGradient id="node1Grad" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#C6BEFF"/>
+      <stop offset="55%" stop-color="#8F84F5"/>
+      <stop offset="100%" stop-color="#5C50CB"/>
+    </radialGradient>
+
+    <radialGradient id="node2Grad" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#D3CCFF"/>
+      <stop offset="55%" stop-color="#9C92F8"/>
+      <stop offset="100%" stop-color="#6559D6"/>
+    </radialGradient>
+
+    <radialGradient id="node3Grad" cx="35%" cy="28%" r="80%">
+      <stop offset="0%" stop-color="#B9FDE8"/>
+      <stop offset="50%" stop-color="#3FE0B8"/>
+      <stop offset="100%" stop-color="#1FA382"/>
+    </radialGradient>
+
+    <filter id="softShadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <filter id="tileShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#5347C4" flood-opacity="0.35"/>
+    </filter>
+
+    <radialGradient id="glossGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- tile -->
+  <rect x="18" y="18" width="364" height="364" rx="92" fill="url(#tileGrad)" filter="url(#tileShadow)"/>
+  <rect x="18" y="18" width="364" height="364" rx="92" fill="none" stroke="#4A4270" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- gloss highlight -->
+  <ellipse cx="150" cy="110" rx="170" ry="110" fill="url(#glossGrad)"/>
+
+  <!-- path shadow (depth layer) -->
+  <path d="M110 300 C 150 300, 165 245, 210 220 C 250 198, 265 150, 298 118"
+        fill="none" stroke="#000000" stroke-opacity="0.35" stroke-width="26"
+        stroke-linecap="round" transform="translate(0,7)"/>
+
+  <!-- path tube -->
+  <path d="M110 300 C 150 300, 165 245, 210 220 C 250 198, 265 150, 298 118"
+        fill="none" stroke="url(#tubeGrad)" stroke-width="22" stroke-linecap="round"/>
+
+  <!-- node 1 : start -->
+  <circle cx="110" cy="300" r="27" fill="url(#node1Grad)" filter="url(#softShadow)"/>
+  <ellipse cx="101" cy="290" rx="9" ry="6" fill="#FFFFFF" opacity="0.55"/>
+
+  <!-- node 2 : midpoint -->
+  <circle cx="210" cy="220" r="31" fill="url(#node2Grad)" filter="url(#softShadow)"/>
+  <ellipse cx="199" cy="207" rx="10" ry="7" fill="#FFFFFF" opacity="0.55"/>
+
+  <!-- node 3 : destination -->
+  <circle cx="298" cy="118" r="38" fill="url(#node3Grad)" filter="url(#softShadow)"/>
+  <ellipse cx="284" cy="102" rx="12" ry="8" fill="#FFFFFF" opacity="0.6"/>
+  <path d="M281 118 L293 130 L317 104" fill="none" stroke="#0A2E24" stroke-width="8"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+</svg>
