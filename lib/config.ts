@@ -9,7 +9,7 @@ export interface Configuration {
   NEXTAUTH_SECRET: string
   GOOGLE_CLIENT_ID: string
   GOOGLE_CLIENT_SECRET: string
-  GEMINI_API_KEY: string
+  GROQ_API_KEY: string
   YOUTUBE_API_KEY: string
 }
 
@@ -19,7 +19,7 @@ const REQUIRED_FIELDS: (keyof Configuration)[] = [
   'NEXTAUTH_SECRET',
   'GOOGLE_CLIENT_ID',
   'GOOGLE_CLIENT_SECRET',
-  'GEMINI_API_KEY',
+  'GROQ_API_KEY',
   'YOUTUBE_API_KEY',
 ]
 
@@ -50,7 +50,7 @@ export function parseConfig(env: Record<string, string | undefined>): Configurat
     NEXTAUTH_SECRET: env.NEXTAUTH_SECRET!,
     GOOGLE_CLIENT_ID: env.GOOGLE_CLIENT_ID!,
     GOOGLE_CLIENT_SECRET: env.GOOGLE_CLIENT_SECRET!,
-    GEMINI_API_KEY: env.GEMINI_API_KEY!,
+    GROQ_API_KEY: env.GROQ_API_KEY!,
     YOUTUBE_API_KEY: env.YOUTUBE_API_KEY!,
   }
 }

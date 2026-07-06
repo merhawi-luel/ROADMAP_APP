@@ -39,32 +39,32 @@ export default function NewRoadmapForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 rounded-3xl border border-zinc-800 bg-zinc-950 p-8 shadow-sm shadow-black/40">
+    <form onSubmit={handleSubmit} className="space-y-6 rounded-[16px] border border-[#1b1f29] bg-[#12151c] p-8">
       <div>
-        <label className="block text-sm font-medium text-zinc-100">Roadmap title</label>
+        <label className="block text-sm font-medium text-[#eef0f5]">Roadmap title</label>
         <input
           value={title}
           onChange={(event) => setTitle(event.target.value)}
-          className="mt-2 w-full rounded-2xl border border-zinc-700 bg-black px-4 py-3 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-500 focus:border-white focus:ring-2 focus:ring-white/20"
-          placeholder="Learn React and build a roadmap"
+          className="mt-2 w-full rounded-[10px] border border-[#252a35] bg-[#0a0c11] px-4 py-3 text-sm text-[#eef0f5] outline-none transition placeholder:text-[#3d4455] focus:border-[#8177f2] focus:ring-1 focus:ring-[#8177f2]/30"
+          placeholder="e.g. Learn React in 4 weeks"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-zinc-100">Description</label>
+        <label className="block text-sm font-medium text-[#eef0f5]">Description</label>
         <textarea
           value={description}
           onChange={(event) => setDescription(event.target.value)}
-          className="mt-2 h-32 w-full rounded-2xl border border-zinc-700 bg-black px-4 py-3 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-500 focus:border-white focus:ring-2 focus:ring-white/20"
-          placeholder="Add a short description for this roadmap"
+          className="mt-2 h-32 w-full rounded-[10px] border border-[#252a35] bg-[#0a0c11] px-4 py-3 text-sm text-[#eef0f5] outline-none transition placeholder:text-[#3d4455] focus:border-[#8177f2] focus:ring-1 focus:ring-[#8177f2]/30 resize-none"
+          placeholder="What will you learn? What's the goal?"
         />
       </div>
-      {error ? <p className="text-sm text-danger">{error}</p> : null}
+      {error ? <p className="text-sm text-red-400">{error}</p> : null}
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex items-center justify-center rounded-[8px] bg-[#8177f2] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {isSubmitting ? 'Creating roadmap…' : 'Create roadmap'}
+        {isSubmitting ? 'Creating…' : 'Create roadmap'}
       </button>
     </form>
   )

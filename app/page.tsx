@@ -17,7 +17,7 @@ export default async function Home() {
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,_rgba(42,38,96,0.7)_0%,_transparent_70%)] opacity-70" />
           <section className="space-y-8">
             <div className="space-y-4">
-              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#5e6577]">RoadmapApp</p>
+              <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-[#8a92a6]">RoadmapApp</p>
               <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-[#eef0f5] sm:text-[3.05rem] sm:leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
                 Build, track, and complete your learning roadmaps.
               </h1>
@@ -44,7 +44,7 @@ export default async function Home() {
           </section>
 
           <div className="rounded-[12px] border border-[#1b1f29] bg-[#181c25] p-8 text-white sm:p-10">
-            <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-[#5e6577]">What you can do</p>
+              <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-[#8a92a6]">What you can do</p>
             <ul className="mt-8 space-y-5 text-[14px] leading-7 text-[#98a0b3]">
               <li>• Create and manage personalized learning roadmaps</li>
               <li>• Add videos, links, and task items to each roadmap</li>

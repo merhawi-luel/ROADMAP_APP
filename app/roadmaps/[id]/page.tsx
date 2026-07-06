@@ -10,6 +10,7 @@ import ChecklistSection from '@/components/ChecklistSection'
 import ProgressAnalysisCard from '@/components/ProgressAnalysisCard'
 import ProgressChartPanel from '@/components/ProgressChartPanel'
 import CircularProgress from '@/components/CircularProgress'
+import DeleteRoadmapButton from '@/components/DeleteRoadmapButton'
 
 interface RoadmapPageProps {
   params: Promise<{ id: string }>
@@ -41,13 +42,16 @@ export default async function RoadmapDetailPage({ params }: RoadmapPageProps) {
             <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle,_rgba(42,38,96,0.7)_0%,_transparent_70%)] opacity-70" />
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#5e6577]">Roadmap details</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#8a92a6]">Roadmap details</p>
                 <h1 className="mt-3 text-3xl font-semibold text-[#eef0f5]" style={{ fontFamily: 'var(--font-display)' }}>
                   {roadmap.title}
                 </h1>
               </div>
-              <div className="rounded-[20px] border border-[#252a35] bg-[#181c25] px-4 py-2 text-[13px] text-[#98a0b3]">
-                Created at {new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(roadmap.createdAt))}
+              <div className="flex flex-col items-end gap-3">
+                <div className="rounded-[20px] border border-[#252a35] bg-[#181c25] px-4 py-2 text-[13px] text-[#98a0b3]">
+                  Created at {new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(new Date(roadmap.createdAt))}
+                </div>
+                <DeleteRoadmapButton roadmapId={roadmap.id} />
               </div>
             </div>
 

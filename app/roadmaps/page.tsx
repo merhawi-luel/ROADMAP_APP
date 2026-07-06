@@ -27,7 +27,7 @@ export default async function RoadmapsPage() {
       <main className="mx-auto max-w-6xl px-6 py-10 sm:px-8">
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#5e6577]">Your workspace</p>
+              <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-[#8a92a6]">Your workspace</p>
             <h1 className="mt-4 text-3xl font-semibold text-[#eef0f5] sm:text-[2.25rem]" style={{ fontFamily: 'var(--font-display)' }}>
               Your roadmaps
             </h1>

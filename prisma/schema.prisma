@@ -21,6 +21,8 @@ model User {
   sessions      Session[]
   roadmaps      Roadmap[]
   playlist      PlaylistItem[]
+  socialLinks   SocialLinks?
+  plannerEntries PlannerEntry[]
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
 }
@@ -79,6 +81,7 @@ model ChecklistItem {
   order     Int
   roadmapId String
   roadmap   Roadmap  @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  plannerEntries PlannerEntry[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -113,6 +116,22 @@ model PlaylistItem {
   @@index([userId])
 }
 
+// SocialLinks model - user's social and coding platform profiles
+model SocialLinks {
+  id         String  @id @default(cuid())
+  userId     String  @unique
+  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  linkedin   String?
+  instagram  String?
+  telegram   String?
+  leetcode   String?
+  codeforces String?
+  github     String?
+  x          String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
 // VerificationToken model - email verification tokens (NextAuth.js)
 model VerificationToken {
   identifier String
@@ -120,4 +139,23 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+// PlannerEntry model - daily/weekly planner entries
+model PlannerEntry {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date            String   // ISO date string YYYY-MM-DD
+  title           String
+  timeFrom        String?  // HH:MM e.g. "09:00"
+  timeTo          String?  // HH:MM e.g. "11:00"
+  notes           String?  @db.Text
+  completed       Boolean  @default(false)
+  checklistItemId String?
+  checklistItem   ChecklistItem? @relation(fields: [checklistItemId], references: [id], onDelete: SetNull)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([userId, date])
 }

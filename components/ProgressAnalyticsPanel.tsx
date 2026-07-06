@@ -46,7 +46,7 @@ export default function ProgressAnalyticsPanel({ title, subtitle, points, analys
     <section className="rounded-[12px] border border-[#1b1f29] bg-[#12151c] p-8 shadow-sm shadow-black/40">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-[#5e6577]">{subtitle}</p>
+          <p className="font-mono text-[10.5px] uppercase tracking-[0.1em] text-[#8a92a6]">{subtitle}</p>
           <h2 className="mt-3 text-[19px] font-semibold text-[#eef0f5]" style={{ fontFamily: 'var(--font-display)' }}>
             {title}
           </h2>

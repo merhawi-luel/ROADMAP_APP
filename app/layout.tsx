@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '../lib/auth'
 import Providers from './providers'
+import Chatbot from '../components/Chatbot'
 import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
@@ -36,7 +37,11 @@ export default async function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-black text-zinc-100">
-        <Providers session={session}>{children}</Providers>
+        <Providers session={session}>
+          {children}
+          {/* AI Chatbot - only show when user is authenticated */}
+          {session && <Chatbot />}
+        </Providers>
       </body>
     </html>
   )

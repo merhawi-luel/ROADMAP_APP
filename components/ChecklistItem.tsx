@@ -47,7 +47,7 @@ export default function ChecklistItem({ item, onToggle, onDelete, draggable, onD
               <p className={`text-[15px] font-semibold ${item.done ? 'text-[#5e6577] line-through' : 'text-[#eef0f5]'}`}>
                 {item.title}
               </p>
-              <p className="font-mono text-[10.5px] uppercase tracking-[0.06em] text-[#5e6577]">{typeLabels[item.type]}</p>
+              <p className="font-mono text-[10.5px] uppercase tracking-[0.06em] text-[#8a92a6]">{typeLabels[item.type]}</p>
             </div>
             <button
               type="button"

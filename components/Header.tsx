@@ -16,11 +16,21 @@ export default function Header() {
             <span>RoadmapApp</span>
           </Link>
           <nav className="hidden items-center gap-5 text-[14px] text-[#98a0b3] md:flex">
-            <Link href="/roadmaps" className="transition hover:text-[#eef0f5]">
-              Roadmaps
-            </Link>
             <Link href="/roadmaps/new" className="transition hover:text-[#eef0f5]">
               New roadmap
+            </Link>
+            {signedIn && (
+              <Link href="/profile" className="transition hover:text-[#eef0f5]">
+                Social links
+              </Link>
+            )}
+            {signedIn && (
+              <Link href="/planner" className="transition hover:text-[#eef0f5]">
+                Planner
+              </Link>
+            )}
+            <Link href="/about" className="transition hover:text-[#eef0f5]">
+              About
             </Link>
           </nav>
         </div>
